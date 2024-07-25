@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Matrix Controller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .slider {
+            width: 100%;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>LED Matrix Controller</h1>
+    <form action="/" method="post">
+        <input type="text" name="message" placeholder="Enter text" required>
+        <button type="submit">Send</button>
+    </form>
+    <form action="/" method="post">
+        <button type="submit" name="toggle">{{ 'Turn Off' if is_display_on else 'Turn On' }}</button>
+    </form>
+    <form action="/" method="post">
+        <label for="speed">Scroll Speed:</label>
+        <input type="range" id="speed" name="speed" min="0.01" max="1.0" step="0.01" value="{{ scroll_speed }}" class="slider">
+        <button type="submit">Set Speed</button>
+    </form>
+    <p>Current Message: {{ message }}</p>
+</body>
+</html>
