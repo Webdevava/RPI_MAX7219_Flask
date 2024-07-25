@@ -8,7 +8,7 @@ import threading
 import time
 import os
 
-# Get the absolute path of the current file (app.py)
+# Get the absolute path of the current file (main.py)
 base_dir = os.path.abspath(os.path.dirname(__file__))
 
 # Define the absolute path to the templates directory
